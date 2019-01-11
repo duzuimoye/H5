@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" style="font-size: 50px;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>礼遇双旦 一表心意</title>
+    <link rel="stylesheet" href="./index.css">
+  
+    <style>
+      .snow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        transform: translate3d(0, 0, 0);
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+    </style>
+</head>
+<body>
+<script type="text/javascript" src="js/ThreeCanvas.js"></script>
+<script type="text/javascript" src="js/Snow.js"></script>
+<script type="text/javascript">
+var SCREEN_WIDTH = window.innerWidth;
+var SCREEN_HEIGHT = window.innerHeight;
+var container;
+var particle;
+var camera; //相机
+var scene; //场景
+var renderer;
+var mouseX = 0;
+var mouseY = 0;
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
+var particles = []; 
+var particleImage = new Image();//THREE.ImageUtils.loadTexture( "img/ParticleSmoke.png" );
+particleImage.src = 'images/ParticleSmoke.png'; 
+// particleImage.src = 'images/snow.png';
+
+function init() {
+  container = document.createElement('div');
+  container.className = 'snow';
+	document.body.appendChild(container);
+	camera = new THREE.PerspectiveCamera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
+	camera.position.z = 1000;
+	scene = new THREE.Scene();
+	scene.add(camera);
+	renderer = new THREE.CanvasRenderer();
+	renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+	console.log(SCREEN_WIDTH, SCREEN_HEIGHT);
+	var material = new THREE.ParticleBasicMaterial( { map: new THREE.Texture(particleImage) } );
+		
+	for (var i = 0; i < 200; i++) {
+		particle = new Particle3D( material);
+		particle.position.x = Math.random() * 2000 - 1000;
+		particle.position.y = Math.random() * 2000 - 1000;
+		particle.position.z = Math.random() * 2000 - 1000;
+		particle.scale.x = particle.scale.y =  1;
+		scene.add( particle );
+		particles.push(particle); 
+	}
+
+	container.appendChild( renderer.domElement );
+	setInterval( loop, 1000 / 60 );
+}
+
+function loop() {
+for(var i = 0; i < particles.length; i++)
+	{
+		var particle = particles[i]; 
+		particle.updatePhysics(); 
+		with(particle.position)
+		{
+			if(y < -1000) y += 2000; 
+			if(x > 1000) x -= 2000; 
+			else if(x <- 1000) x += 2000; 
+			if(z > 1000) z -= 2000; 
+			else if(z <- 1000) z += 2000; 
+		}				
+	}
+
+	camera.position.x += (mouseX - camera.position.x ) * 0.05;
+	camera.position.y += (- mouseY - camera.position.y ) * 0.05;
+	camera.lookAt(scene.position); 
+	renderer.render( scene, camera );
+}
+init();
+</script>
+  <img class="header" src="./assets/header.jpg?ver=1.0.3" />
+  <img class="slogan" src="./assets/server.png?ver=1.0.3" alt="slogan" />
+  <img class="huilingdun" src="./assets/huilingdun.png">
+  <div class="section section-1">
+      <div class="products">
+        <div
+          class="product"
+          onclick="handleRouteToProductDetail(this)"
+          data-item-id="1545209600682"
+        >
+          <img class="img" src="./assets/dw1.png" />
+        </div>
+        <div
+          class="product"
+          onclick="handleRouteToProductDetail(this)"
+          data-item-id="1545209419386"
+        >
+          <img class="img" src="./assets/dw2.png" />
+        </div>
+        <div class="product-groups">
+          <div class="product1" 
+          onclick="handleRouteToProductDetail(this)"
+          data-item-id="1545114601649">
+            <img class="img" src="./assets/DW-1.png">
+          </div>
+          <div class="product1" 
+          onclick="handleRouteToProductDetail(this)"
+          data-item-id="1542804644471">
+            <img class="img" src="./assets/DW-2.png">
+          </div>
+          <div class="product1" 
+          onclick="handleRouteToProductDetail(this)"
+          data-item-id="1545209707469">
+            <img class="img" src="./assets/DW-3.png">
+          </div>
+          <div class="product1" 
+          onclick="handleRouteToProductDetail(this)"
+          data-item-id="1541252584348">
+            <img class="img" src="./assets/DW-4.png">
+          </div>
+        </div>
+        <img class="img" src="./assets/armani.png">
+        <div
+          class="product"
+          onclick="handleRouteToProductDetail(this)"
+          data-item-id="1541001923462"
+        >
+          <img class="img" src="./assets/Armani1.png" />
+        </div>
+        <div
+          class="product"
+          onclick="handleRouteToProductDetail(this)"
+          data-item-id="1545376678827"
+        >
+          <img class="img" src="./assets/Armani2.png" />
+        </div>
+        <div class="product-groups">
+          <div class="product1" 
+          onclick="handleRouteToProductDetail(this)"
+          data-item-id="1541316912384">
+            <img class="img" src="./assets/Am1.png">
+          </div>
+          <div class="product1" 
+          onclick="handleRouteToProductDetail(this)"
+          data-item-id="1541000876809">
+            <img class="img" src="./assets/Am2.png">
+          </div>
+          <div class="product1" 
+          onclick="handleRouteToProductDetail(this)"
+          data-item-id="1545379049376">
+            <img class="img" src="./assets/Am3.png">
+          </div>
+          <div class="product1" 
+          onclick="handleRouteToProductDetail(this)"
+          data-item-id="1545291034968">
+            <img class="img" src="./assets/Am4.png">
+          </div>
+        </div>
+        <img class="img" src="./assets/tiansuo.png">
+        <div
+        class="product"
+        onclick="handleRouteToProductDetail(this)"
+        data-item-id="1543306067709"
+      >
+        <img class="img" src="./assets/casio1.png" />
+      </div>
+      <div
+      class="product"
+      onclick="handleRouteToProductDetail(this)"
+      data-item-id="1545381950710"
+    >
+      <img class="img" src="./assets/casio2.png" />
+      <div class="product-groups">
+        <div class="product1" 
+        onclick="handleRouteToProductDetail(this)"
+        data-item-id="1545380679516">
+          <img class="img" src="./assets/tiansuo1.png">
+        </div>
+        <div class="product1" 
+        onclick="handleRouteToProductDetail(this)"
+        data-item-id="1545381286004">
+          <img class="img" src="./assets/tiansuo2.png">
+        </div>
+        <div class="product1" 
+        onclick="handleRouteToProductDetail(this)"
+        data-item-id="1545381791040">
+          <img class="img" src="./assets/tiansuo3.png">
+        </div>
+        <div class="product1" 
+        onclick="handleRouteToProductDetail(this)"
+        data-item-id="1545382073398">
+          <img class="img" src="./assets/tiansuo4.png">
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    <div class="last">
+      <a class="btn-more" onclick="handleRouteToIndex()">查看更多商品</a>
+      <div class="modal modal-no-bg disabled" id="modal_toast">
+        <div class="modal-toast" id="toast_text">您已经领取过了</div>
+      </div>
+    </div>
+    <img class="img" src="./assets/bottom.png" >
+    <script src="./index.js"></script>
+</body>
+</html>
