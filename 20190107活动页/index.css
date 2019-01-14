@@ -1,0 +1,195 @@
+html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        /* background:linear-gradient(to bottom, #ABD1F6 0%,#9cc4f0 100%); */
+        background: #fff;
+        font-size: 12px;
+      }
+      .header{
+          width: 100%;
+      }
+      .img {
+        width: 100%;
+        margin-top: 15px;
+      }
+      .banner {
+       margin:1.2rem 0.3rem 0.1rem 0.3rem;
+      }
+      .banner img{
+        width:100%;
+      }
+      .lifu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+      }
+      .lifu img{
+        width:30%;
+      }
+      .jingxuan {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+      }
+      .jingxuan img{
+          width:30%;
+      }
+      .section {
+        overflow: auto;
+      }
+
+      .section-1 {
+        background: #fff;
+      }
+
+      .section .title {
+        margin: 0.48rem 0 0;
+      }
+
+      .section .products {
+        padding: 0 0.2rem 0.6rem;
+        overflow: auto;
+      }
+
+      .products .prod-intro {
+        margin: 0.6rem 0 0;
+      }
+
+      .products .prod-intro:first-of-type {
+        margin-top: 0.35rem;
+      }
+
+      .products .product {
+        margin: 0.24rem 0 0;
+        cursor: pointer;
+      }
+      .product-groups {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-column-gap: 10px;
+        grid-row-gap: 20px;
+        padding: 10px 15px;
+      }
+      .product-groups .product1 img{
+        width: 100%;
+      }
+      .more{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        margin:20px 0;
+      }
+      .more img{
+        width: 40%;
+      }
+      .last {
+        padding: 0 0 0.4rem;
+        text-align: center;
+        margin:  0 auto;
+        overflow: hidden;
+      }
+
+      .last .last-activity {
+        width: 4.7rem;
+        margin: 0.4rem auto 0;
+      }
+
+      .last .btn-more {
+        display: block;
+        height: 0.78rem;
+        line-height: 0.79rem;
+        margin: 0.52rem 0.36rem 0;
+        border-radius: 0.08rem;
+        background-image: url('./assets/arrow.png'); 
+        background-color: #B8AB9E;
+        background-repeat: no-repeat;
+        background-size: 0.12rem 0.22rem;
+        background-position: 60% center;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .partner {
+        padding: 0 0 0.4rem;
+        background: #cce7fa;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .partner .title {
+        display: block;
+        margin: 0.6rem 0 0;
+        color: #e6ebda;
+        font-size: 16px;
+        font-weight: bolder;
+      }
+
+      .partner .partner-item {
+        width: 3rem;
+        margin: 0.3rem auto 0;
+      }
+
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100000;
+        transform: translate3d(0, 0, 0);
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        transition: all 0.3s;
+      }
+
+      .modal.modal-no-bg {
+        background: transparent;
+      }
+
+      .modal.disabled {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+      }
+
+      .modal-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        transform: translate3d(0, 0, 0);
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+      }
+
+      .modal-container {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 0;
+        transform: translate3d(0, -50%, 0);
+        width: 100%;
+      }
+
+      .modal .modal-toast {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 0;
+        padding: 0.3rem;
+        border-radius: 4px;
+        transform: translate3d(-50%, -50%, 0);
+        background: #333;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+      }

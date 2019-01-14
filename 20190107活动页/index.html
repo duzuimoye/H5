@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" style="font-size: 50px;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>新品抢鲜租</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <img class="header" src="./assets/banner.png" />
+    <div class="banner">
+        <img src="./assets/image1.png" />
+    </div>
+    <div class="lifu">
+        <img src="./assets/lifu.png" />
+    </div>
+    <div class="section section-1">
+          <div class="product-groups">
+            <div class="product1" 
+            onclick="handleRouteToProductDetail(this)"
+            data-item-id="1537511767019">
+              <img src="./assets/group1.png"/>
+            </div>
+            <div class="product1" 
+            onclick="handleRouteToProductDetail(this)"
+            data-item-id="1542030256071">
+              <img src="./assets/group2.png"/>
+            </div>
+            <div class="product1" 
+            onclick="handleRouteToProductDetail(this)"
+            data-item-id="1537508340751">
+              <img src="./assets/group3.png"/>
+            </div>
+            <div class="product1" 
+            onclick="handleRouteToProductDetail(this)"
+            data-item-id="1537511059593">
+              <img src="./assets/group4.png"/>
+            </div>
+          </div>
+          <div class="more" 
+            onclick="routeToMerchantDetail(this)"
+            data-shop-id="47d1808d8d36c0436a8783f14bc900b6">
+              <img src="./assets/more.png"/>
+            </div>
+          <img class="img" src="./assets/header2.png"/>
+          <div class="jingxuan">
+              <img src="./assets/jingxuan.png" />
+          </div>
+          <div class="product-groups">
+            <div class="product1" 
+            onclick="handleRouteToProductDetail(this)"
+            data-item-id="1539742901608">
+              <img src="./assets/group5.png"/>
+            </div>
+            <div class="product1" 
+            onclick="handleRouteToProductDetail(this)"
+            data-item-id="1539758186386">
+              <img src="./assets/group6.png"/>
+            </div>
+            <div class="product1" 
+            onclick="handleRouteToProductDetail(this)"
+            data-item-id="1540804110938">
+              <img src="./assets/group7.png"/>
+            </div>
+            <div class="product1" 
+            onclick="handleRouteToProductDetail(this)"
+            data-item-id="1540804901622">
+              <img src="./assets/group8.png"/>
+            </div>
+          </div>
+          <div
+          class="more"
+          onclick="routeToMerchantDetail(this)"
+          data-shop-id="e58a7df971b42baed72d2af673c6cf12">
+          <img class="img" src="./assets/more.png" />
+        </div>
+        </div>
+      </div>
+        </div>
+      </div>
+      <div class="last">
+            <a href="https://res.zudeapp.com/activity/common/index.html?id=42&channel=6">
+              <img class="img last-activity" src="./assets/last.png">
+            </a>
+            <a class="btn-more" onclick="handleRouteToIndex()">返回首页</a>
+            <div class="modal modal-no-bg disabled" id="modal_toast">
+              <div class="modal-toast" id="toast_text">您已经领取过了</div>
+            </div>
+          </div>
+      <script src="./index.js"></script>
+</body>
+</html>
