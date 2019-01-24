@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+  color:#fff;
+  position: absolute;
+  line-height: 20px;
+}
+h1{
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+small{
+  letter-spacing: 2px;
+  font-size: 10px;
+  color: rgba(255,255,255,.5);
+}
+h5{
+  color: rgba(53,255,255, 1);
+  letter-spacing: 1px;
+}
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Star Sea<small> --- POWERED BY YUFEI ZHOU</small></h1>
+        <h5>Press the direction key of keyboard to move</h5>
+      </div>
+      <canvas id="canvas" style="background:#000"></canvas>
+</body>
+<script>
+    //球类
+function Ball3d(radius){
+    if(radius === undefined) {radius = 40;}
+    this.x = 0;
+    this.y = 0;
+    this.xpos = 0;
+    this.ypos = 0;
+    this.zpos = 0;
+    this.vz = 0;
+    this.vx = 0;
+    this.vy = 0;
+    this.radius = radius;
+    this.rotation = 0;
+    this.mass = 1;
+    this.scaleX = 1;
+    this.scaleY = 1;
+    this.name = "";
+    this.lineWidth = 1;
+
+}
+Ball3d.prototype.draw = function(context){
+    context.save();
+    context.translate(this.x,this.y);
+    context.rotate(this.rotation);
+    context.scale(this.scaleX,this.scaleY);
+    context.lineWidth = this.lineWidth;
+    var gradient = context.createRadialGradient(0, 0, 0, 0, 0, this.radius );
+        gradient.addColorStop(0,"rgba(255,255,255,1)");
+        gradient.addColorStop(0.2,"rgba(0,255,255,1)");
+        gradient.addColorStop(0.3,"rgba(0,0,100,1)");
+        gradient.addColorStop(1,"rgba(0,0,0,0.1)");
+    context.fillStyle = gradient;
+    context.beginPath();
+    context.arc(0,0,this.radius,0,Math.PI*2,false);
+    context.closePath();
+    context.fill();
+    context.restore();
+}
+
+// main
+
+var canvas = document.getElementById('canvas'),
+   context = canvas.getContext('2d'),
+   WIDTH = window.innerWidth, 
+   HEIGHT = window.innerHeight;
+   canvas.width = WIDTH;
+   canvas.height = HEIGHT;
+
+var balls = [],
+   numBalls = 400,
+   fl = 100,
+   vpX = canvas.width / 2,
+   vpY = canvas.height / 2,
+   floor = 250,
+   ax = 0,
+   ay = 0,
+   az = 0,
+   vx = 0,
+   vy = 0,
+   vz = 0.5,
+   gravity = 0.3,
+   friction = 0.98;
+
+for (var ball, i = 0; i < numBalls; i++) {
+  var size = Math.random()*80,
+      ball = new Ball3d(size);
+      ball.xpos = Math.random() * 3000 - 1500;
+      ball.ypos = Math.random()* 1200 - 600;
+      ball.zpos = Math.random() * 10000;
+      balls.push(ball);
+}
+    
+
+window.addEventListener('keydown', function (event) {
+        switch (event.keyCode) {
+        case 38:        //up
+          az = -1;
+          break;
+        case 40:        //down
+          az = 1;
+          break;
+        case 37:        //left
+          ax = 1;
+          break;
+        case 39:        //right
+          ax = -1;
+          break;
+        case 32:        //space
+          ay = 1;
+          break;
+        }
+      }, false);
+
+window.addEventListener('keyup', function (event) {
+        switch (event.keyCode) {
+        case 38:        //up
+        case 40:        //down
+          az = 0;
+          break;
+        case 37:        //left
+        case 39:        //right
+          ax = 0;
+          break;
+        case 32:        //space
+          ay = 0;
+          break;
+        }
+      }, false);
+      
+function move (ball) {
+        ball.xpos += vx;
+        ball.ypos += vy;
+        ball.zpos += vz;
+          
+        if(ball.ypos < -600){
+            ball.ypos = 600;
+        }
+        if (ball.zpos < -fl) {
+          ball.zpos += 10000;
+        }
+        if (ball.zpos > 10000 - fl) {
+          ball.zpos -= 10000;
+        }
+        var scale = fl / (fl + ball.zpos);
+        ball.scaleX = ball.scaleY = scale;
+        ball.x = vpX + ball.xpos * scale;
+        ball.y = vpY + ball.ypos * scale;
+        ball.alpha = scale;
+      }
+
+      function zSort (a, b) {
+        return (b.zpos - a.zpos);
+      }
+      
+      function draw (ball) {
+        ball.draw(context);
+      }
+        
+     
+(function drawFrame () {
+    window.requestAnimationFrame(drawFrame, canvas);
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    vx += ax;
+    vy += ay;
+    vz += az;
+    vy -= gravity;
+    balls.forEach(move);
+    vx *= friction;
+    vy *= friction;
+    vz *= friction;
+    balls.sort(zSort);
+    balls.forEach(draw);
+ }())
+
+function resize(){
+  canvas.width =WIDTH = window.innerWidth;
+  canvas.height =HEIGHT = window.innerHeight;
+  vpX = canvas.width / 2;
+  vpY = canvas.height / 2;
+}
+window.addEventListener("resize", resize);
+    
+</script>
+</html>
