@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <body tabindex="1" class="loadingInProgress" id="contbox">
+                <div class="btn" id="btn">截取屏幕</div>  
+                <div><a id="down1" class="down" href="" download="downImg" >截图下载</a></div>
+                <div>你的网页内容………………</div>
+            </body>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>  
+<script src="https://cdn.bootcss.com/html2canvas/0.4.1/html2canvas.js"></script>  
+<script>
+    //以下是截图代码
+    $(function(){  
+    $("#btn").click(function(){  
+        html2canvas($("#contbox"), {  
+            height: $("#contbox").outerHeight() + 20,  
+                width: $("#contbox").outerWidth() + 20  ,
+                onrendered: function(canvas) {
+                //将canvas画布放大若干倍，然后盛放在较小的容器内，就显得不模糊了
+                var timestamp = Date.parse(new Date());
+                //把截取到的图片替换到a标签的路径下载  
+                $("#down1").attr('href',canvas.toDataURL());  
+                //下载下来的图片名字  
+                $("#down1").attr('download',timestamp + '.png') ;   
+                //document.body.appendChild(canvas);  
+            }  
+            //可以带上宽高截取你所需要的部分内容 
+        });  
+    });  
+});  
+</script>
+</html>
