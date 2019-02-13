@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<title>翻书demo</title>
+	<meta name="keywords" content="your keywords">
+	<meta name="description" content="your description">
+	<meta name="author" content="author,email address">
+	<meta name="robots" content="index,follow">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="renderer" content="ie-stand">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	width: 400px;
+	height: 250px;
+	perspective: 400px;
+	transform-style: preserve-3d;
+	transform: translate(-50%, -50%);
+}
+
+.book {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	perspective: 1400px;
+	transform-style: preserve-3d;
+	transform: rotateX(90deg) translateZ(-100px);
+	transform-origin: bottom center;
+}
+
+.page {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 200px;
+	height: 250px;
+	transform-origin: left center;
+	transform-style: preserve-3d;
+	transition: all ease 1s;
+}
+
+.page_front, .page_back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	line-height: 250px;
+	text-align: center;
+	color: #FFF;
+	font-size: 24px;
+	backface-visibility: hidden;
+}
+
+.page_back {
+	transform: rotateY(180deg);
+}
+
+.page_cover {
+	background: #000;
+}
+
+.page_1 {
+	background: red;
+}
+
+.page_2 {
+	background: blue;
+}
+
+.page_3 {
+	background: yellow;
+}
+
+.page_turning {
+	transform: rotateY(-180deg);
+}
+
+.button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: 150px;
+	transform: translateX(-50%);
+	padding: 10px 20px;
+	border: 1px solid #000;
+	border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+	<div class="box">
+		<div class="book">
+			<div id="page2" class="page" data-page="2">
+				<div class="page_front page_2">2</div>
+				<div class="page_back page_3">3</div>
+			</div>
+			<div id="page1" class="page" data-page="1">
+				<div class="page_front page_cover">Cover</div>
+				<div class="page_back page_1">1</div>
+			</div>
+		</div>
+	</div>
+	<div class="button">翻书</div>
+<script>
+	var btn = document.querySelector('.button'), 
+		pageNum = document.querySelectorAll('.page').length, 
+		page = 0;
+        console.log(pageNum);
+	btn.addEventListener('click', function(){
+		if(page>0){
+			document.getElementById('page'+page).setAttribute('class', 'page');
+			page -= 1;
+		}else if(page==0){
+			page += 1;
+			document.getElementById('page'+page).setAttribute('class', 'page page_turning');
+		}
+	});
+</script>
+</body>
+</html>
