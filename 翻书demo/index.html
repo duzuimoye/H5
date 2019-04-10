@@ -22,7 +22,7 @@
 	margin-top: -100px;
 	width: 400px;
 	height: 250px;
-	perspective: 400px;
+	perspective: 400px;/*被查看位置的视图*/
 	transform-style: preserve-3d;
 	transform: translate(-50%, -50%);
 }
@@ -33,7 +33,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	perspective: 1400px;
+	perspective: 1400px;/*被查看位置的视图*/
 	transform-style: preserve-3d;
 	transform: rotateX(90deg) translateZ(-100px);
 	transform-origin: bottom center;
@@ -46,7 +46,7 @@
 	width: 200px;
 	height: 250px;
 	transform-origin: left center;
-	transform-style: preserve-3d;
+	transform-style: preserve-3d;/*规定如何在3D空间中呈现被嵌套的元素，子元素将保留其3D位置*/
 	transition: all ease 1s;
 }
 
@@ -60,7 +60,7 @@
 	text-align: center;
 	color: #FFF;
 	font-size: 24px;
-	backface-visibility: hidden;
+	backface-visibility: hidden;/*定义当元素不面向屏幕时是否可见 */
 }
 
 .page_back {

@@ -38,6 +38,7 @@
         this.ctx.strokeStyle = style;
         this.ctx.lineWidth = 3;
         this.ctx.moveTo(this.lastPoint[0].x, this.lastPoint[0].y);
+        // console.log(lastPoint[0].x);
 
         for (var i = 1 ; i < this.lastPoint.length ; i++) {
             this.ctx.lineTo(this.lastPoint[i].x, this.lastPoint[i].y);
@@ -76,9 +77,10 @@
     }
     clock.prototype.getPosition = function(e) {// 获取touch点相对于canvas的坐标
         var rect = e.currentTarget.getBoundingClientRect();
+        // console.log(rect);
         var po = {
-            x: (e.touches[0].clientX - rect.left)*this.devicePixelRatio,
-            y: (e.touches[0].clientY - rect.top)*this.devicePixelRatio
+            x: (e.touches[0].clientX - rect.left) * this.devicePixelRatio,
+            y: (e.touches[0].clientY - rect.top) * this.devicePixelRatio
           };
         return po;
     }
@@ -93,10 +95,6 @@
         this.drawStatusPoint('#27AED5');// 每帧花轨迹
 
         this.drawLine('#27AED5',po , this.lastPoint);// 每帧画圆心
-
-// if (this.lastPoint.length == 4) {
-//     // debugger
-// }
 
         for (var i = 0 ; i < this.restPoint.length ; i++) {
             if (Math.abs(po.x - this.restPoint[i].x) < this.r && Math.abs(po.y - this.restPoint[i].y) < this.r) {
@@ -113,6 +111,7 @@
         p2 = '';
         for (var i = 0 ; i < psw1.length ; i++) {
             p1 += psw1[i].index + psw1[i].index;
+            console.log(p1);
         }
         for (var i = 0 ; i < psw2.length ; i++) {
             p2 += psw2[i].index + psw2[i].index;
@@ -179,18 +178,14 @@
     clock.prototype.makeState = function() {
         if (this.pswObj.step == 2) {
             document.getElementById('updatePassword').style.display = 'block';
-            //document.getElementById('chooseType').style.display = 'none';
-
             var title = document.getElementById("title");
             title.style.color = "#87888a";
             title.innerHTML = '请解锁';
 
         } else if (this.pswObj.step == 1) {
-            //document.getElementById('chooseType').style.display = 'none';
             document.getElementById('updatePassword').style.display = 'none';
         } else {
             document.getElementById('updatePassword').style.display = 'none';
-            //document.getElementById('chooseType').style.display = 'block';
         }
     }
     clock.prototype.setChooseType = function(type){
