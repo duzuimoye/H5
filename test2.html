@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 800px;
+            height: 70px;
+            margin: 20px auto;
+            background-image: url('./images/bg.png');
+        }
+        ul {
+            width: 700px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+
+        img.small{
+            width: 69px;
+            height: 69px;
+        }
+
+        img.large {
+            width: 224px;
+            height: 69px;
+            display: none;
+        }
+
+        ul {
+            height: 71px;
+        }
+        li {
+            float: left;
+        }
+
+        li.active {
+            width: 224px;
+        }
+
+        .active .small {
+            display: none;
+        }
+        .active .large {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="hero-box">
+        <ul class="hero-list">
+            <li class="active">
+                <img src="./kings/106.jpg" alt="" class="small">
+                <img src="./kings/106-freehover.png" alt="" class="large">
+            </li>
+            <li>
+                <img src="./kings/108.jpg" alt="" class="small">
+                <img src="./kings/108-freehover.png" alt="" class="large">
+            </li>
+            <li>
+                <img src="./kings/140.jpg" alt="" class="small">
+                <img src="./kings/140-freehover.png" alt="" class="large">
+            </li>
+            <li>
+                <img src="./kings/173.jpg" alt="" class="small">
+                <img src="./kings/173-freehover.png" alt="" class="large">
+            </li>
+            <li>
+                <img src="./kings/195.jpg" alt="" class="small">
+                <img src="./kings/195-freehover.png" alt="" class="large">
+            </li>
+            <li>
+                <img src="./kings/501.jpg" alt="" class="small">
+                <img src="./kings/501-freehover.png" alt="" class="large">
+            </li>
+            <li>
+                <img src="./kings/511.jpg" alt="" class="small">
+                <img src="./kings/511-freehover.png" alt="" class="large">
+            </li>
+        </ul>
+    </div>
+    <script>
+        $('.hero-list').children('li').mouseover(function() {
+            $(this).stop().animate({
+                'width':224,
+            }).find('.small').stop().fadeOut().siblings('.large').stop().fadeIn();
+
+            $(this).siblings().stop().animate({
+                'width':69,
+            }).find('.small').stop().fadeIn().siblings('.large').stop().fadeOut();
+        })
+
+    </script>
+</body>
+</html>

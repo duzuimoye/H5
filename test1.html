@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style type="text/css">
+        .grid{
+            margin: auto;
+            width: 500px;
+            text-align: center;
+        }
+        .grid table {
+            width: 100%
+            border-collapse : collapse /*这里的","还一直报错*/
+
+        }
+        .grid th,td{
+            padding: 10;
+            border: 1px dashed orange;
+            height: 35px;
+            line-height: 35px;
+        }
+        .grid th {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="grid">
+            <table>
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>名称</th>
+                        <th>时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr :key='item.id' v-for='item in books'>
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.date}}</td>
+                        <td>
+                            <a href="">修改</a>
+                            <span>|</span>
+                            <a href="">删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.js"></script>
+    <script type="text/javascript">
+        /*
+
+        */
+        var app = new Vue({
+            el:'#app',
+            data: {
+                books:[{
+                    id: 1,
+                    name: '东',
+                    date: ''
+                },{
+                    id: 2,
+                    name: '西',
+                    date: ''
+                },{
+                    id: 3,
+                    name: '南',
+                    date: ''
+                },{
+                    id: 4,
+                    name: '北',
+                    date: ''
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

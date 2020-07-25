@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>实现简单的一页展示多条数据左右翻页功能</title>
+</head>
+<body>
+    <div class="container">
+        <button type="button" onclick="moveLeft(-1)">左翻页</button>
+        <button type="button" onclick="moveLeft(1)">右翻页</button>
+    </div>
+    <script>
+        var arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
+        var flag = 0;
+        const NUM = 6;
+        function moveLeft(a){
+            var newArr = [];
+            //如果是向左滑动，首先判断标志位flag是否小于等于0
+            if(a == -1){
+                //如果标志位为0，则表示不能向右滑动，把flag标志位置位0
+                if(flag <= 0){
+                    flag = 0;
+                    newArr = arr.slice(flag*NUM,flag*NUM+NUM);
+                }else{
+                    flag = flag - 1;
+                    console.log(flag);
+                    newArr = arr.slice(flag*NUM,flag*NUM+NUM);
+                }
+            }else{//如果向右滑动，则需要判断上限
+                /*debugger;*/
+                //首先判断是不是NUM的整数倍
+                //如果是NUM的整数倍
+                if(arr.length % NUM == 0){
+                    //如果flag大于等于arr.length/NUM-1，把flag置为arr.length/NUM-1
+                    if(flag >= arr.length/NUM-1){
+                        flag = arr.length/NUM-1;
+                        newArr = arr.slice(flag*NUM,flag*NUM+NUM);
+                    }else{//如果flag小于arr.length/NUM-1
+                        flag = flag + 1;
+                        console.log(flag);
+                        newArr = arr.slice(flag*NUM,flag*NUM+NUM);
+                    }
+                }else{//如果不是NUM的整数倍
+                    //如果flag大于等于Math.floor(arr.length/NUM),把flag置为Math.floor(arr.length/NUM)
+                    if(flag >= Math.floor(arr.length/NUM)){
+                        flag = Math.floor(arr.length/NUM);
+                        newArr = arr.slice(flag*NUM,flag*NUM+NUM);
+                    }else{//如果flag小于Math.floor(arr.length/NUM)
+                        flag = flag + 1;
+                        newArr = arr.slice(flag*NUM,flag*NUM+NUM);
+                    }
+                }
+            }
+            console.log(newArr);
+            return newArr;
+        }
+    </script>
+</body>
+</html>
