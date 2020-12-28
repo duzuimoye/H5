@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      z-index: 1;
+      position: relative;
+      width: 375px;
+      height: 1139px;
+      background-color: rgba(245, 245, 245, 1);
+      overflow: hidden;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 0;
+    }
+
+    .outer1 {
+      z-index: auto;
+      width: 375px;
+      height: 1125px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mod1 {
+      z-index: auto;
+      width: 340px;
+      height: 18px;
+      margin-left: 21px;
+      margin-top: 0;
+      flex-direction: row;
+      display: flex;
+    }
+
+    .word1 {
+      z-index: 17;
+      width: 54px;
+      display: block;
+      color: rgba(0, 0, 0, 1);
+      font-size: 15px;
+      letter-spacing: -0.30000001192092896px;
+      font-family: Helvetica;
+      line-height: 18px;
+      text-align: center;
+      margin-left: 0;
+    }
+
+    .label1 {
+      z-index: 11;
+      width: 17px;
+      height: 11px;
+      margin-top: 4px;
+      margin-left: 219px;
+    }
+
+    .label2 {
+      z-index: 7;
+      width: 16px;
+      height: 11px;
+      margin-top: 4px;
+      margin-left: 5px;
+    }
+
+    .icon1 {
+      z-index: 3;
+      width: 25px;
+      height: 12px;
+      margin-top: 3px;
+      margin-left: 4px;
+      margin-right: 0;
+    }
+
+    .mod2 {
+      z-index: auto;
+      width: 343px;
+      height: 22px;
+      margin-left: 16px;
+      margin-top: 24px;
+      flex-direction: row;
+      display: flex;
+    }
+
+    .word2 {
+      z-index: 18;
+      width: 64px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 16px;
+      font-family: PingFangSC-Medium;
+      line-height: 22px;
+      text-align: left;
+      margin-left: 0;
+    }
+
+    .icon2 {
+      z-index: 107;
+      width: 13px;
+      height: 13px;
+      margin-top: 5px;
+      margin-left: 214px;
+    }
+
+    .word3 {
+      z-index: 106;
+      width: 48px;
+      display: block;
+      color: rgba(255, 88, 100, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 3px;
+      margin-left: 4px;
+      margin-right: 0;
+    }
+
+    .mod3 {
+      z-index: 22;
+      height: 146px;
+      border-radius: 15px 15px 15px 15px;
+      background-color: rgba(245, 150, 140, 1);
+      box-shadow: 0px 2px 20px 2px #fdeae8;
+      align-self: center;
+      margin-top: 12px;
+      width: 355px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .main1 {
+      z-index: auto;
+      width: 312px;
+      height: 25px;
+      margin-left: 20px;
+      margin-top: 14px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .word4 {
+      z-index: 95;
+      width: 76px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Medium;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .info1 {
+      z-index: 130;
+      width: 79px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Medium;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .word5 {
+      z-index: 102;
+      width: 69px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Medium;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .main2 {
+      z-index: auto;
+      width: 291px;
+      height: 17px;
+      margin-left: 20px;
+      margin-top: 4px;
+      flex-direction: row;
+      display: flex;
+    }
+
+    .info2 {
+      z-index: 94;
+      width: 48px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-left: 0;
+    }
+
+    .icon3 {
+      z-index: 91;
+      width: 5px;
+      height: 9px;
+      margin-top: 4px;
+      margin-left: 4px;
+    }
+
+    .txt1 {
+      z-index: 131;
+      width: 48px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-left: 63px;
+    }
+
+    .txt2 {
+      z-index: 101;
+      width: 48px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-left: 75px;
+      margin-right: 0;
+    }
+
+    .main3 {
+      z-index: auto;
+      width: 277px;
+      height: 25px;
+      margin-left: 20px;
+      margin-top: 14px;
+      flex-direction: row;
+      display: flex;
+    }
+
+    .txt3 {
+      z-index: 97;
+      width: 58px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Medium;
+      line-height: 17px;
+      text-align: left;
+      margin-left: 0;
+    }
+
+    .txt4 {
+      z-index: 128;
+      width: 54px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Medium;
+      line-height: 17px;
+      text-align: left;
+      margin-left: 62px;
+    }
+
+    .info3 {
+      z-index: 105;
+      width: 34px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 18px;
+      font-family: PingFangSC-Medium;
+      line-height: 25px;
+      text-align: left;
+      margin-left: 69px;
+      margin-right: 0;
+    }
+
+    .main4 {
+      z-index: auto;
+      width: 315px;
+      height: 17px;
+      margin-left: 20px;
+      margin-top: 4px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .txt5 {
+      z-index: 98;
+      width: 48px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .txt6 {
+      z-index: 127;
+      width: 48px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .info4 {
+      z-index: 104;
+      width: 72px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .main5 {
+      z-index: auto;
+      width: 6px;
+      height: 14px;
+      margin-left: 175px;
+      margin-top: 8px;
+      flex-direction: row;
+      display: flex;
+    }
+
+    .icon4 {
+      z-index: 122;
+      width: 6px;
+      height: 14px;
+      margin-right: 0;
+    }
+
+    .txt7 {
+      z-index: 21;
+      width: 64px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 16px;
+      font-family: PingFangSC-Medium;
+      line-height: 22px;
+      text-align: left;
+      align-self: flex-start;
+      margin-left: 16px;
+      margin-top: 20px;
+    }
+
+    .mod4 {
+      z-index: 90;
+      height: 269px;
+      border-radius: 15px 15px 15px 15px;
+      background-color: rgba(255, 255, 255, 1);
+      align-self: center;
+      margin-top: 12px;
+      width: 355px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .bd1 {
+      z-index: auto;
+      width: 301px;
+      height: 42px;
+      margin-left: 27px;
+      margin-top: 20px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bd2 {
+      z-index: 170;
+      height: 42px;
+      border-color: rgba(255, 220, 220, 1);
+      border-width: 1px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      width: 42px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .label3 {
+      z-index: 171;
+      width: 18px;
+      height: 21px;
+    }
+
+    .bd3 {
+      z-index: 140;
+      height: 42px;
+      border-color: rgba(255, 220, 220, 1);
+      border-width: 1px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      width: 42px;
+      justify-content: center;
+      align-items: flex-end;
+      padding-right: 9px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .label4 {
+      z-index: 141;
+      width: 21px;
+      height: 21px;
+    }
+
+    .bd4 {
+      z-index: 199;
+      height: 42px;
+      border-color: rgba(255, 220, 220, 1);
+      border-width: 1px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      width: 42px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .icon5 {
+      z-index: 200;
+      width: 22px;
+      height: 20px;
+    }
+
+    .bd5 {
+      z-index: 234;
+      height: 42px;
+      border-color: rgba(255, 220, 220, 1);
+      border-width: 1px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      width: 42px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .label5 {
+      z-index: 235;
+      width: 22px;
+      height: 22px;
+    }
+
+    .bd6 {
+      z-index: auto;
+      width: 307px;
+      height: 17px;
+      margin-left: 24px;
+      margin-top: 4px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .word6 {
+      z-index: 178;
+      width: 48px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .word7 {
+      z-index: 150;
+      width: 48px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .word8 {
+      z-index: 207;
+      width: 48px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .word9 {
+      z-index: 249;
+      width: 48px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .bd7 {
+      z-index: auto;
+      width: 300px;
+      height: 42px;
+      margin-left: 27px;
+      margin-top: 20px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .group1 {
+      z-index: 190;
+      height: 42px;
+      border-color: rgba(255, 220, 220, 1);
+      border-width: 1px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      width: 42px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .icon6 {
+      z-index: 191;
+      width: 22px;
+      height: 20px;
+    }
+
+    .group2 {
+      z-index: 159;
+      height: 42px;
+      border-color: rgba(255, 220, 220, 1);
+      border-width: 1px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      width: 42px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .label6 {
+      z-index: 160;
+      width: 21px;
+      height: 20px;
+    }
+
+    .group3 {
+      z-index: 208;
+      height: 42px;
+      border-color: rgba(255, 220, 220, 1);
+      border-width: 1px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      width: 42px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .label7 {
+      z-index: 209;
+      width: 20px;
+      height: 21px;
+    }
+
+    .group4 {
+      z-index: 225;
+      height: 42px;
+      border-color: rgba(255, 220, 220, 1);
+      border-width: 1px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      width: 42px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .label8 {
+      z-index: 226;
+      width: 21px;
+      height: 22px;
+    }
+
+    .bd8 {
+      z-index: auto;
+      width: 306px;
+      height: 17px;
+      margin-left: 24px;
+      margin-top: 4px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .word10 {
+      z-index: 198;
+      width: 48px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .info5 {
+      z-index: 169;
+      width: 48px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .info6 {
+      z-index: 217;
+      width: 48px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .info7 {
+      z-index: 233;
+      width: 48px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .bd9 {
+      z-index: auto;
+      width: 215px;
+      height: 42px;
+      margin-left: 27px;
+      margin-top: 20px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .box1 {
+      z-index: 179;
+      height: 42px;
+      border-color: rgba(255, 220, 220, 1);
+      border-width: 1px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      width: 42px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .label9 {
+      z-index: 180;
+      width: 20px;
+      height: 22px;
+    }
+
+    .box2 {
+      z-index: 151;
+      height: 42px;
+      border-color: rgba(255, 220, 220, 1);
+      border-width: 1px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      width: 42px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .icon7 {
+      z-index: 152;
+      width: 20px;
+      height: 21px;
+    }
+
+    .box3 {
+      z-index: 218;
+      height: 42px;
+      border-color: rgba(255, 220, 220, 1);
+      border-width: 1px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      width: 42px;
+      justify-content: flex-end;
+      padding-bottom: 9px;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .label10 {
+      z-index: 219;
+      width: 21px;
+      height: 21px;
+    }
+
+    .bd10 {
+      z-index: auto;
+      width: 221px;
+      height: 17px;
+      margin-left: 24px;
+      margin-top: 4px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .txt8 {
+      z-index: 189;
+      width: 48px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .txt9 {
+      z-index: 158;
+      width: 48px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .info8 {
+      z-index: 224;
+      width: 48px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .mod5 {
+      z-index: auto;
+      width: 343px;
+      height: 22px;
+      margin-left: 16px;
+      margin-top: 20px;
+      flex-direction: row;
+      display: flex;
+    }
+
+    .info9 {
+      z-index: 250;
+      width: 64px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 16px;
+      font-family: PingFangSC-Medium;
+      line-height: 22px;
+      text-align: left;
+      margin-left: 0;
+    }
+
+    .icon8 {
+      z-index: 335;
+      width: 13px;
+      height: 13px;
+      margin-top: 5px;
+      margin-left: 238px;
+    }
+
+    .txt10 {
+      z-index: 334;
+      width: 24px;
+      display: block;
+      color: rgba(255, 88, 100, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 3px;
+      margin-left: 4px;
+      margin-right: 0;
+    }
+
+    .mod6 {
+      z-index: 251;
+      height: 200px;
+      border-radius: 15px 15px 15px 15px;
+      background-color: rgba(255, 255, 255, 1);
+      align-self: center;
+      margin-top: 12px;
+      width: 355px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .bd11 {
+      z-index: auto;
+      width: 323px;
+      height: 172px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrap1 {
+      z-index: auto;
+      width: 323px;
+      height: 17px;
+      margin-left: 0;
+      margin-top: 0;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .txt11 {
+      z-index: 332;
+      width: 48px;
+      display: block;
+      color: rgba(153, 153, 153, 0.99);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: right;
+      margin-top: 0;
+    }
+
+    .txt12 {
+      z-index: 330;
+      width: 72px;
+      display: block;
+      color: rgba(153, 153, 153, 0.99);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: right;
+      margin-top: 0;
+    }
+
+    .wrap2 {
+      z-index: auto;
+      width: 323px;
+      height: 25px;
+      margin-left: 0;
+      margin-top: 4px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .info10 {
+      z-index: 328;
+      width: 93px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Medium;
+      line-height: 17px;
+      text-align: right;
+      margin-top: 0;
+    }
+
+    .word11 {
+      z-index: 326;
+      width: 95px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Medium;
+      line-height: 17px;
+      text-align: right;
+      margin-top: 0;
+    }
+
+    .wrap3 {
+      z-index: 252;
+      width: 311px;
+      height: 10px;
+      border-radius: 7.5px 7.5px 7.5px 7.5px;
+      background-color: rgba(240, 240, 240, 1);
+      align-self: flex-end;
+      margin-right: 0;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .wrap4 {
+      z-index: auto;
+      width: 323px;
+      height: 17px;
+      margin-left: 0;
+      margin-top: 20px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .word12 {
+      z-index: 331;
+      width: 48px;
+      display: block;
+      color: rgba(153, 153, 153, 0.99);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: right;
+      margin-top: 0;
+    }
+
+    .word13 {
+      z-index: 333;
+      width: 72px;
+      display: block;
+      color: rgba(153, 153, 153, 0.99);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: right;
+      margin-top: 0;
+    }
+
+    .wrap5 {
+      z-index: auto;
+      width: 323px;
+      height: 25px;
+      margin-left: 0;
+      margin-top: 4px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .word14 {
+      z-index: 329;
+      width: 92px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Medium;
+      line-height: 17px;
+      text-align: right;
+      margin-top: 0;
+    }
+
+    .word15 {
+      z-index: 327;
+      width: 95px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Medium;
+      line-height: 17px;
+      text-align: right;
+      margin-top: 0;
+    }
+
+    .wrap6 {
+      z-index: 253;
+      width: 311px;
+      height: 10px;
+      border-radius: 7.5px 7.5px 7.5px 7.5px;
+      background-color: rgba(240, 240, 240, 1);
+      align-self: flex-end;
+      margin-right: 0;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .mod7 {
+      z-index: auto;
+      width: 343px;
+      height: 22px;
+      margin-left: 16px;
+      margin-top: 20px;
+      flex-direction: row;
+      display: flex;
+    }
+
+    .word16 {
+      z-index: 19;
+      width: 96px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 16px;
+      font-family: PingFangSC-Medium;
+      line-height: 22px;
+      text-align: left;
+      margin-left: 0;
+    }
+
+    .label11 {
+      z-index: 114;
+      width: 13px;
+      height: 13px;
+      margin-top: 6px;
+      margin-left: 182px;
+    }
+
+    .word17 {
+      z-index: 113;
+      width: 48px;
+      display: block;
+      color: rgba(255, 88, 100, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      margin-top: 3px;
+      margin-left: 4px;
+      margin-right: 0;
+    }
+
+    .mod8 {
+      z-index: 23;
+      height: 74px;
+      border-radius: 15px 15px 15px 15px;
+      background-color: rgba(255, 255, 255, 1);
+      align-self: center;
+      margin-top: 12px;
+      width: 355px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .bd12 {
+      z-index: auto;
+      width: 295px;
+      height: 46px;
+      flex-direction: row;
+      display: flex;
+    }
+
+    .section1 {
+      z-index: auto;
+      width: 48px;
+      height: 46px;
+      margin-left: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .txt13 {
+      z-index: 77;
+      width: 10px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 18px;
+      font-family: PingFangSC-Medium;
+      line-height: 25px;
+      text-align: left;
+      align-self: flex-end;
+      margin-right: 14px;
+      margin-top: 0;
+    }
+
+    .word18 {
+      z-index: 79;
+      width: 48px;
+      display: block;
+      color: rgba(153, 153, 153, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      align-self: center;
+      margin-top: 4px;
+    }
+
+    .label12 {
+      z-index: 80;
+      width: 5px;
+      height: 9px;
+      margin-top: 33px;
+      margin-left: 4px;
+    }
+
+    .section2 {
+      z-index: 343;
+      width: 1px;
+      height: 46px;
+      border-radius: 0 0 0 0;
+      background-color: rgba(240, 240, 240, 1);
+      margin-left: 31px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .section3 {
+      z-index: auto;
+      width: 48px;
+      height: 46px;
+      margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .word19 {
+      z-index: 61;
+      width: 19px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 18px;
+      font-family: PingFangSC-Medium;
+      line-height: 25px;
+      text-align: left;
+      align-self: flex-end;
+      margin-right: 10px;
+      margin-top: 0;
+    }
+
+    .word20 {
+      z-index: 57;
+      width: 48px;
+      display: block;
+      color: rgba(153, 153, 153, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      align-self: center;
+      margin-top: 4px;
+    }
+
+    .icon9 {
+      z-index: 58;
+      width: 5px;
+      height: 9px;
+      margin-top: 33px;
+      margin-left: 4px;
+    }
+
+    .section4 {
+      z-index: 344;
+      width: 1px;
+      height: 46px;
+      border-radius: 0 0 0 0;
+      background-color: rgba(240, 240, 240, 1);
+      margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .section5 {
+      z-index: auto;
+      width: 48px;
+      height: 46px;
+      margin-left: 31px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .word21 {
+      z-index: 75;
+      width: 22px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 18px;
+      font-family: PingFangSC-Medium;
+      line-height: 25px;
+      text-align: left;
+      align-self: flex-end;
+      margin-right: 8px;
+      margin-top: 0;
+    }
+
+    .info11 {
+      z-index: 71;
+      width: 48px;
+      display: block;
+      color: rgba(153, 153, 153, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      align-self: center;
+      margin-top: 4px;
+    }
+
+    .icon10 {
+      z-index: 72;
+      width: 5px;
+      height: 9px;
+      margin-top: 33px;
+      margin-left: 4px;
+      margin-right: 0;
+    }
+
+    .word22 {
+      z-index: 20;
+      width: 96px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 16px;
+      font-family: PingFangSC-Medium;
+      line-height: 22px;
+      text-align: left;
+      align-self: flex-start;
+      margin-left: 16px;
+      margin-top: 20px;
+    }
+
+    .mod9 {
+      z-index: 24;
+      height: 74px;
+      border-radius: 15px 15px 15px 15px;
+      background-color: rgba(255, 255, 255, 1);
+      align-self: center;
+      margin-top: 12px;
+      width: 355px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .main6 {
+      z-index: auto;
+      width: 235px;
+      height: 46px;
+      flex-direction: row;
+      display: flex;
+    }
+
+    .section6 {
+      z-index: auto;
+      width: 48px;
+      height: 46px;
+      margin-left: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .word23 {
+      z-index: 89;
+      width: 10px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 18px;
+      font-family: PingFangSC-Medium;
+      line-height: 25px;
+      text-align: left;
+      align-self: flex-end;
+      margin-right: 14px;
+      margin-top: 0;
+    }
+
+    .txt14 {
+      z-index: 88;
+      width: 48px;
+      display: block;
+      color: rgba(153, 153, 153, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      align-self: center;
+      margin-top: 4px;
+    }
+
+    .icon11 {
+      z-index: 85;
+      width: 5px;
+      height: 9px;
+      margin-top: 33px;
+      margin-left: 4px;
+    }
+
+    .section7 {
+      z-index: 345;
+      width: 1px;
+      height: 46px;
+      border-radius: 0 0 0 0;
+      background-color: rgba(240, 240, 240, 1);
+      margin-left: 60px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .section8 {
+      z-index: auto;
+      width: 48px;
+      height: 46px;
+      margin-left: 60px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .word24 {
+      z-index: 68;
+      width: 19px;
+      display: block;
+      color: rgba(51, 51, 51, 1);
+      font-size: 18px;
+      font-family: PingFangSC-Medium;
+      line-height: 25px;
+      text-align: left;
+      align-self: flex-end;
+      margin-right: 10px;
+      margin-top: 0;
+    }
+
+    .word25 {
+      z-index: 64;
+      width: 48px;
+      display: block;
+      color: rgba(153, 153, 153, 1);
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      line-height: 17px;
+      text-align: left;
+      align-self: center;
+      margin-top: 4px;
+    }
+
+    .icon12 {
+      z-index: 65;
+      width: 5px;
+      height: 9px;
+      margin-top: 33px;
+      margin-left: 4px;
+      margin-right: 0;
+    }
+
+    .mod10 {
+      z-index: 25;
+      height: 50px;
+      border-radius: 0 0 0 0;
+      background-color: rgba(255, 255, 255, 1);
+      align-self: center;
+      margin-top: 20px;
+      width: 375px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .box4 {
+      z-index: auto;
+      width: 307px;
+      height: 23px;
+      margin-left: 34px;
+      margin-top: 8px;
+      flex-direction: row;
+      display: flex;
+    }
+
+    .label13 {
+      z-index: 28;
+      width: 23px;
+      height: 22px;
+      margin-left: 0;
+    }
+
+    .label14 {
+      z-index: 132;
+      width: 21px;
+      height: 21px;
+      margin-left: 48px;
+    }
+
+    .label15 {
+      z-index: 43;
+      width: 22px;
+      height: 22px;
+      margin-left: 51px;
+    }
+
+    .label16 {
+      z-index: 52;
+      width: 24px;
+      height: 22px;
+      margin-left: 51px;
+    }
+
+    .outer2 {
+      z-index: 40;
+      width: 20px;
+      height: 2px;
+      border-radius: 1px 1px 1px 1px;
+      background-color: rgba(153, 153, 153, 1);
+      margin-top: 21px;
+      margin-left: 47px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .label17 {
+      z-index: 36;
+      width: 20px;
+      height: 22px;
+      margin-left: -20px;
+      margin-right: 0;
+    }
+
+    .box5 {
+      z-index: auto;
+      width: 306px;
+      height: 14px;
+      margin-left: 35px;
+      margin-top: 1px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .word26 {
+      z-index: 27;
+      width: 20px;
+      display: block;
+      color: rgba(254, 63, 77, 1);
+      font-size: 10px;
+      font-family: PingFangSC-Regular;
+      line-height: 14px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .info12 {
+      z-index: 33;
+      width: 20px;
+      display: block;
+      color: rgba(153, 153, 153, 1);
+      font-size: 10px;
+      font-family: PingFangSC-Regular;
+      line-height: 14px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .info13 {
+      z-index: 42;
+      width: 30px;
+      display: block;
+      color: rgba(153, 153, 153, 1);
+      font-size: 10px;
+      font-family: PingFangSC-Regular;
+      line-height: 14px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .word27 {
+      z-index: 51;
+      width: 20px;
+      display: block;
+      color: rgba(153, 153, 153, 1);
+      font-size: 10px;
+      font-family: PingFangSC-Regular;
+      line-height: 14px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .word28 {
+      z-index: 35;
+      width: 20px;
+      display: block;
+      color: rgba(153, 153, 153, 1);
+      font-size: 10px;
+      font-family: PingFangSC-Regular;
+      line-height: 14px;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .info14 {
+      z-index: 349;
+      position: absolute;
+      left: 163px;
+      top: 309px;
+      width: 6px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 10px;
+      font-family: PingFangSC-Regular;
+      line-height: 14px;
+      text-align: left;
+    }
+
+    .outer3 {
+      z-index: 348;
+      position: absolute;
+      left: 159px;
+      top: 310px;
+      width: 13px;
+      height: 13px;
+      background-color: rgba(255, 88, 100, 1);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .outer4 {
+      z-index: 347;
+      position: absolute;
+      left: 246px;
+      top: 393px;
+      width: 9px;
+      height: 9px;
+      background-color: rgba(255, 88, 100, 1);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .outer5 {
+      z-index: 346;
+      position: absolute;
+      left: 73px;
+      top: 393px;
+      width: 9px;
+      height: 9px;
+      background-color: rgba(255, 88, 100, 1);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .pic1 {
+      z-index: 254;
+      position: absolute;
+      left: 26px;
+      top: 677px;
+      width: 270px;
+      height: 26px;
+    }
+
+    .img1 {
+      z-index: 300;
+      position: absolute;
+      left: 26px;
+      top: 773px;
+      width: 113px;
+      height: 26px;
+    }
+
+    .outer6 {
+      z-index: 138;
+      height: 15px;
+      background-color: rgba(254, 63, 77, 1);
+      border-radius: 50%;
+      width: 15px;
+      justify-content: flex-start;
+      align-items: center;
+      position: absolute;
+      left: 124px;
+      top: 1091px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding-top: 0;
+    }
+
+    .txt15 {
+      z-index: 139;
+      width: 11px;
+      display: block;
+      color: rgba(255, 255, 255, 1);
+      font-size: 10px;
+      font-family: PingFangSC-Regular;
+      line-height: 14px;
+      text-align: left;
+    }
+  </style>
+  <!-- <style src="./index.css"></style> -->
+</head>
+
+<body>
+  <div class="container">
+    <div class="outer1">
+      <div class="mod1">
+        <span class="word1">9:41</span>
+        <img class="label1"
+          src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng3e60438a9f4c1a6266ffa81e6c697342b6dc328939e2539d633d06261b6f609a" />
+        <img class="label2"
+          src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngdd5626102674acbe692a54bb11533322071f2388cc6fa2e4a321cbacf262d3f7" />
+        <img class="icon1"
+          src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng4bc2688b3dbadb77e8fec419285a9301507e335dde3a9af8e739a9774e542d76" />
+      </div>
+      <div class="mod2">
+        <span class="word2">今日简报</span>
+        <img class="icon2"
+          src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng530b233941de87880e3514040f095566b283b09ccbf05f5f6570504e1f77b055" />
+        <span class="word3">添加更多</span>
+      </div>
+      <div class="mod3">
+        <div class="main1">
+          <span class="word4">¥15000.00</span>
+          <span class="info1">¥24000.00</span>
+          <span class="word5">¥9000.00</span>
+        </div>
+        <div class="main2">
+          <span class="info2">今日营收</span>
+          <img class="icon3"
+            src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng67cda877c8667015124c4ffbf5ed3ef7a97d4aaca83a80cc54b0470ccddef4f8" />
+          <span class="txt1">今日业绩</span>
+          <span class="txt2">今日实耗</span>
+        </div>
+        <div class="main3">
+          <span class="txt3">¥500.00</span> <span class="txt4">¥100.00</span>
+          <span class="info3">24人</span>
+        </div>
+        <div class="main4">
+          <span class="txt5">今日还款</span>
+          <span class="txt6">今日退款</span>
+          <span class="info4">今日新增会员</span>
+        </div>
+        <div class="main5">
+          <img class="icon4"
+            src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngb1811f9485b9252ab8177983a6046e42eb5c387bd28c65bac5beaebb9a245dcd" />
+        </div>
+      </div>
+      <span class="txt7">日常工作</span>
+      <div class="mod4">
+        <div class="bd1">
+          <div class="bd2">
+            <img class="label3"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng1c1dbc1638db5b3327f0922d3e9c76ed0fec8c307350944df980e9c5e875e53d" />
+          </div>
+          <div class="bd3">
+            <img class="label4"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPnga2c4b9456cbc263621da1ea8f4479d5c53f73c11eab2c377fc601fbfc504672f" />
+          </div>
+          <div class="bd4">
+            <img class="icon5"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng4d7a780005e1e3d44939b0343db1f5c1e697fcc6d2ef95547edd8c5dab0a68d0" />
+          </div>
+          <div class="bd5">
+            <img class="label5"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngea878030e36374ee17e77a8f655f8a5d0c3fe4a763233d3e08c32387978fd8b8" />
+          </div>
+        </div>
+        <div class="bd6">
+          <span class="word6">今日到店</span>
+          <span class="word7">预约管理</span>
+          <span class="word8">服务日志</span>
+          <span class="word9">疗效跟踪</span>
+        </div>
+        <div class="bd7">
+          <div class="group1">
+            <img class="icon6"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngfab811d10de8bccdc0216089ce553105c22d3e910f8ccf9cabc8cda118b17ac4" />
+          </div>
+          <div class="group2">
+            <img class="label6"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngba36df7e9acf5adbe564b29a374c45ea896d9bbcafaa17a29d4672ee36cd3efc" />
+          </div>
+          <div class="group3">
+            <img class="label7"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng068865f740b05f53d74bb2fce438bd6e8b089958d962e378548eb647adbe9324" />
+          </div>
+          <div class="group4">
+            <img class="label8"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngfaccfd37757a000374e5dc72aba90cbf3a268711c71ee727942c1fcdc49439af" />
+          </div>
+        </div>
+        <div class="bd8">
+          <span class="word10">顾客回访</span>
+          <span class="info5">日报管理</span>
+          <span class="info6">运营任务</span>
+          <span class="info7">采购中心</span>
+        </div>
+        <div class="bd9">
+          <div class="box1">
+            <img class="label9"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng14da3fe60dc2fa122f845ddb9d6d47192f772c23d3d37d3a6ebb6886b48b0b61" />
+          </div>
+          <div class="box2">
+            <img class="icon7"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng5c448292493c48856dea3cacf5bacb75444f63d53c1698f861be7c3b9c5d4cdc" />
+          </div>
+          <div class="box3">
+            <img class="label10"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngdc22caed271d97a98e7580a3d5903adc1d7c770369709a2837365cb5e547791e" />
+          </div>
+        </div>
+        <div class="bd10">
+          <span class="txt8">顾客问卷</span>
+          <span class="txt9">采购补贴</span>
+          <span class="info8">门店支出</span>
+        </div>
+      </div>
+      <div class="mod5">
+        <span class="info9">目标进度</span>
+        <img class="icon8"
+          src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPnga10e16b2b5bac8968bfba2c9e342c16ff29153b7b52b945808f12fabf34766cc" />
+        <span class="txt10">编辑</span>
+      </div>
+      <div class="mod6">
+        <div class="bd11">
+          <div class="wrap1">
+            <span class="txt11">当前实收</span>
+            <span class="txt12">本月目标实收</span>
+          </div>
+          <div class="wrap2">
+            <span class="info10">¥677,000.00</span>
+            <span class="word11">¥800,000.00</span>
+          </div>
+          <div class="wrap3"></div>
+          <div class="wrap4">
+            <span class="word12">当前业绩</span>
+            <span class="word13">本月目标业绩</span>
+          </div>
+          <div class="wrap5">
+            <span class="word14">¥241,320.00</span>
+            <span class="word15">¥500,000.00</span>
+          </div>
+          <div class="wrap6"></div>
+        </div>
+      </div>
+      <div class="mod7">
+        <span class="word16">客户预约管理</span>
+        <img class="label11"
+          src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng89f46d4ff1b95d3b22d13b358802e78cf448dbb26bc746192af9572258a0b481" />
+        <span class="word17">快速预约</span>
+      </div>
+      <div class="mod8">
+        <div class="bd12">
+          <div class="section1">
+            <span class="txt13">7</span> <span class="word18">今日到店</span>
+          </div>
+          <img class="label12"
+            src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngb2fa67ab9b703a747a116faf073d30cffb2dd931b01f97e086406d8d703b8ceb" />
+          <div class="section2"></div>
+          <div class="section3">
+            <span class="word19">12</span>
+            <span class="word20">明日到店</span>
+          </div>
+          <img class="icon9"
+            src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngb2fa67ab9b703a747a116faf073d30cffb2dd931b01f97e086406d8d703b8ceb" />
+          <div class="section4"></div>
+          <div class="section5">
+            <span class="word21">64</span>
+            <span class="info11">本周目标</span>
+          </div>
+          <img class="icon10"
+            src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngb2fa67ab9b703a747a116faf073d30cffb2dd931b01f97e086406d8d703b8ceb" />
+        </div>
+      </div>
+      <span class="word22">客户维护管理</span>
+      <div class="mod9">
+        <div class="main6">
+          <div class="section6">
+            <span class="word23">7</span> <span class="txt14">顾客回访</span>
+          </div>
+          <img class="icon11"
+            src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngb2fa67ab9b703a747a116faf073d30cffb2dd931b01f97e086406d8d703b8ceb" />
+          <div class="section7"></div>
+          <div class="section8">
+            <span class="word24">12</span>
+            <span class="word25">服务日志</span>
+          </div>
+          <img class="icon12"
+            src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngb2fa67ab9b703a747a116faf073d30cffb2dd931b01f97e086406d8d703b8ceb" />
+        </div>
+      </div>
+      <div class="mod10">
+        <div class="box4">
+          <img class="label13"
+            src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng075d07382d1591b9355cc33a23225834b5ae8a1c00cfbfcfaf7fc33202609ed0" />
+          <img class="label14"
+            src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng04d93200c862d5f8b4d5d3f83eb4703a80bb1cc2a812fac5386cf45ab5a9c64d" />
+          <img class="label15"
+            src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng18ef731ad84cdd7943bb0e9948700eeea2f3be547a10170d6fbbf4269b9a2437" />
+          <img class="label16"
+            src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng779b756d22e9349b60f1265ba4dd0da1f82c1903625cd521924daee2ba108831" />
+          <div class="outer2"></div>
+          <img class="label17"
+            src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng2fdbe40ee70ad3e709684a14a470c38e39b4b62bde8c91289694fd7c209d3c4e" />
+        </div>
+        <div class="box5">
+          <span class="word26">首页</span> <span class="info12">消息</span>
+          <span class="info13">收银台</span> <span class="word27">客户</span>
+          <span class="word28">我的</span>
+        </div>
+      </div>
+    </div>
+    <span class="info14">5</span>
+    <div class="outer3"></div>
+    <div class="outer4"></div>
+    <div class="outer5"></div>
+    <img class="pic1"
+      src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngc4bfb663742214b8bf314f44b021cfed8f2ba5e1c31a13fabd30de9552ae9217" />
+    <img class="img1"
+      src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng9e9a285acd1a25a532939bdf027b516fb48ba839ac8cb5d7c86570091059dd97" />
+    <div class="outer6"><span class="txt15">12</span></div>
+  </div>
+</body>
+
+</html>
